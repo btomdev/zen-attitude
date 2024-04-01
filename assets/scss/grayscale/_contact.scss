@@ -1,6 +1,6 @@
 .contact-section {
     padding: 16rem 0;
-    background: linear-gradient(to bottom, #{fade-out($black, .9)} 0%,#{fade-out($black, .5)} 75%,$black 100%), url('../img/bg-signup.jpg') no-repeat;
+    background: linear-gradient(to bottom, #{fade-out($black, .9)} 0%,#{fade-out($black, .5)} 75%,$black 100%), url('../../../public/img/bg-signup.jpg') no-repeat;
     .card {
     border: 0;
     border-bottom: 0.25rem solid $primary;
