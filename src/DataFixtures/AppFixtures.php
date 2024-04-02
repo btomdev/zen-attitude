@@ -9,14 +9,14 @@ use App\Entity\Role;
 use App\Entity\User;
 use App\Entity\Grade;
 use App\Entity\Media;
+use App\Entity\Technique;
 use App\Entity\StageClub;
 use Faker\ORM\Doctrine\Populator;
 use App\DataFixtures\Faker\UserProvider;
-use Proxies\__CG__\App\Entity\Technique;
 use App\DataFixtures\Faker\GradeProvider;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use App\DataFixtures\Faker\TechniqueProvider;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture

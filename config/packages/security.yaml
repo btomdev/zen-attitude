@@ -7,27 +7,27 @@ security:
 
 #    TODO
 #    # Nécessaire pour le bon foncitonnement de l'encodage à l'aide de UserPasswordEncoderInterface
-#    encoders:
-#        App\Entity\User:
-#            algorithm: bcrypt
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
     providers:
         users_in_memory: { memory: null }
 
 #        TODO
-#        userProvider:
-#            entity:
-#                class: App\Entity\User # Ajout de 4 fonctions dans l'Entity User pour le bon fonctionnement de l'encodage à l'aide de UserPasswordEncoderInterface
-#                property: email
+        userProvider:
+            entity:
+                class: App\Entity\User # Ajout de 4 fonctions dans l'Entity User pour le bon fonctionnement de l'encodage à l'aide de UserPasswordEncoderInterface
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             lazy: true
-            provider: users_in_memory
+#            provider: users_in_memory
 
 #            TODO
-#            provider: userProvider
+            provider: userProvider
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -36,32 +36,32 @@ security:
             # switch_user: true
 
 #   TODO
-#        form_login:
-#            login_path: login # route définie pour la connexion
-#            check_path: login # page de redirection si connexion nok
-#            username_parameter: login[_email]
-#            password_parameter: login[_password]
-#
-#        logout:
-#            path: logout # route définie dans routes.yaml
-#            target: homepage # page de redirection : page d'accueil
+            form_login:
+                login_path: login # route définie pour la connexion
+                check_path: login # page de redirection si connexion nok
+                username_parameter: login[_email]
+                password_parameter: login[_password]
+
+            logout:
+                path: logout # route définie dans routes.yaml
+                target: homepage # page de redirection : page d'accueil
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
-    access_control:
+#    access_control:
     # - { path: ^/admin, roles: ROLE_ADMIN }
     # - { path: ^/profile, roles: ROLE_USER }
 
 #   TODO
-#    access_control:
-#        - { path: '^/admin', roles: ROLE_ADMIN }
-#        - { path: '^/membre/covoiturage/tous-les-covoiturages', roles: ROLE_ADMIN }
-#        - { path: '^/professeur', roles: ROLE_TEACHER }
-#        - { path: '^/membre', roles: ROLE_USER }
-#
-#    role_hierarchy: # ROLE_ADMIN inclu ROLE_TEACHER qui inclu ROLE_USER
-#        ROLE_ADMIN: ROLE_TEACHER
-#        ROLE_TEACHER: ROLE_USER
+    access_control:
+        - { path: '^/admin', roles: ROLE_ADMIN }
+        - { path: '^/membre/covoiturage/tous-les-covoiturages', roles: ROLE_ADMIN }
+        - { path: '^/professeur', roles: ROLE_TEACHER }
+        - { path: '^/membre', roles: ROLE_USER }
+
+    role_hierarchy: # ROLE_ADMIN inclu ROLE_TEACHER qui inclu ROLE_USER
+        ROLE_ADMIN: ROLE_TEACHER
+        ROLE_TEACHER: ROLE_USER
 
 when@test:
     security:
