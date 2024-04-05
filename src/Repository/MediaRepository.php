@@ -22,21 +22,13 @@ class MediaRepository extends ServiceEntityRepository
     /**
      * @return Media[]
      */
-    public function findAllOrderByTakenAt() 
+    public function findAllOrderByTakenAt(): array
     {
+        $qb = $this->createQueryBuilder('media');
+        $qb->select();
+        $qb->orderBy('media.taken_at', 'DESC');
 
-        $conn = $this->getEntityManager()->getConnection();
-
-        $sql = 
-            'SELECT *
-            FROM media m 
-            ORDER BY m.taken_at DESC'
-            ;
-
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-
-        return $stmt->fetchAll();
+        return $qb->getQuery()->getResult();
     }
 
 

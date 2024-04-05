@@ -6,6 +6,8 @@ use App\Entity\Media;
 use App\Form\MediaNewType;
 use App\Form\MediaEditType;
 use App\Repository\MediaRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
@@ -116,9 +118,8 @@ class GalleryController extends AbstractController
                 //si je remplace mon ancienne image par une nouvelle , je teste dans un premier temps si il y en avait deja une à supprimer ;)
                 if(!empty($oldUrl)){
                     //fonction native a php qui supprime des fichiers
-                    unlink(
-                        $this->getParameter('media_directory') .'/'.$oldUrl
-                    );
+                    $filesystem = new Filesystem();;
+                    $filesystem->remove([$this->getParameter('media_directory') .'/'.$oldUrl]);
                 }
 
             } else { //sinon je garde l'ancienne valeur que j'avais deja en BDD
@@ -141,17 +142,15 @@ class GalleryController extends AbstractController
     /**
      * @Route("/admin/galerie/{id}/suppression", name="admin_gallery_delete", methods={"GET","POST"})
      */
-    public function delete(Request $request, Media $media)
+    public function delete(Request $request, int $id, EntityManagerInterface $entityManager)
     {
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->remove($media); // et j'efface mon entrée en bdd
+        $media = $entityManager->getRepository(Media::class)->find($id);
+        $entityManager->remove($media);
         $entityManager->flush();
 
-        // je récupère le nom de mon fichier en bdd
-        $fileName = $media->getUrl();
-        // j'efface le fichier uploadé dans public/uploads/media
-        unlink($this->getParameter('media_directory') .'/'.$fileName);
-        
+        $filesystem = new Filesystem();;
+        $filesystem->remove([$this->getParameter('media_directory') .'/'.$media->getUrl()]);
+
         $this->addFlash('success', 'L\'image a bien été supprimé');
 
         return $this->redirectToRoute('gallery_index');
