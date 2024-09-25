@@ -28,3 +28,13 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 .DS_Store
+
+.cache/
+.composer/
+.npm/
+.oh-my-zsh/
+.yarn/
+.shell.pre-oh-my-zsh
+.yarnrc
+.zshrc
+.bash_history

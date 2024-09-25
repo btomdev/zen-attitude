@@ -1,4 +1,4 @@
-# Zen-Attitude
+# Zen Attitude
 https://github.com/O-clock-Lunar/Projects/issues/5
 
 ## Description
@@ -26,3 +26,10 @@ On peut voir plusieurs axes de travail :
         - une interface back optimale pour la gestion du site par des non Dev (changement ou ajout de photo/ vidéos, modofocation ou création d'article)
 
 
+## Installation via Docker
+
+- Installer Docker desktop
+- Via un terminal: 
+  - Aller dans le dossier ```cd zen-attitude```
+  - lancer l'instalation ```make start```
+  - stopper ```make down```

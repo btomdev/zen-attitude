@@ -23,6 +23,7 @@
         "jquery": "^3.3.1",
         "jquery.easing": "^1.4.1",
         "mustache": "^3.0.1",
-        "popper.js": "^1.14.7"
+        "popper.js": "^1.14.7",
+        "yarn": "^1.22.22"
     }
 }

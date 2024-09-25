@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   php:
     build:
@@ -8,31 +6,33 @@ services:
     volumes:
       - .:/var/www
     networks:
-      - zen-attitude
+      - zen_attitude
 
   nginx:
+    depends_on:
+      - php
     build:
       context: ./docker/nginx
     container_name: nginx
     ports:
-      - "80:80"
+      - 8000:80
     volumes:
       - .:/var/www
     networks:
-      - zen-attitude
+      - zen_attitude
 
   db:
     image: mysql:8.0.33
     container_name: db
     ports:
-      - "3306:3306"
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: zen-attitude
-      MYSQL_USER: root
+      MYSQL_DATABASE: zen_attitude
+      MYSQL_USER: www-data
       MYSQL_PASSWORD: secret
     networks:
-      - zen-attitude
+      - zen_attitude
 
 networks:
-  zen-attitude: ~
+  zen_attitude: ~
