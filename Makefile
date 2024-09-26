@@ -9,6 +9,7 @@ start: ## Start the project
 	@make composer-install
 	@make database-create
 	@make migrate
+	@make npm-refresh-install
 	@make yarn-install
 	@make yarn-build
 
@@ -28,13 +29,16 @@ composer-install:
 	$(EXEC) $(CONTAINER) composer install
 
 database-create:
-	$(EXEC) $(CONTAINER) bin/console doctrine:database:create --if-not-exists
+	$(EXEC) $(CONTAINER) bin/console doctrine:database:create --if-not-exists -vvv
 
 migrate:
 	$(EXEC) $(CONTAINER) bin/console doctrine:migrations:migrate --no-interaction
 
 yarn-install:
-	$(EXEC) $(CONTAINER) yarn install
+	$(EXEC) $(CONTAINER) npm install -g yarn
 
 yarn-build:
 	$(EXEC) $(CONTAINER) yarn build
+
+npm-refresh-install:
+	$(EXEC) $(CONTAINER) rm -rf node_modules && rm -f package-lock.json && npm install

@@ -27,10 +27,11 @@ services:
     ports:
       - 3306:3306
     environment:
+      MYSQL_HOST: db
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: zen_attitude
       MYSQL_USER: www-data
-      MYSQL_PASSWORD: secret
+      MYSQL_PASSWORD: password
     networks:
       - zen_attitude
 
