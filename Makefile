@@ -9,9 +9,10 @@ start: ## Start the project
 	@make composer-install
 	@make database-create
 	@make migrate
-	@make npm-refresh-install
-	@make yarn-install
-	@make yarn-build
+	@make npm-install
+	@make npm-build
+	@echo
+	@printf "You now can browse on \033[32mhttp://localhost:8000\033[0m\n"
 
 down:
 	$(DOCKER_COMPOSE) down
@@ -34,11 +35,8 @@ database-create:
 migrate:
 	$(EXEC) $(CONTAINER) bin/console doctrine:migrations:migrate --no-interaction
 
-yarn-install:
-	$(EXEC) $(CONTAINER) npm install -g yarn
+npm-build:
+	$(EXEC) $(CONTAINER) npm run build
 
-yarn-build:
-	$(EXEC) $(CONTAINER) yarn build
-
-npm-refresh-install:
-	$(EXEC) $(CONTAINER) rm -rf node_modules && rm -f package-lock.json && npm install
+npm-install:
+	$(EXEC) $(CONTAINER) npm install
