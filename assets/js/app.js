@@ -5,85 +5,83 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
-// Dans ce cas precis tous les fichiers scss sont empilés 
+// Dans ce cas precis tous les fichiers scss sont empilés
 // dans un unique fichier app.scss
 // require('../css/app.css');
-import '../scss/app.scss';
+import "../scss/app.scss";
 
 // charge le paquet jquery à partir de node_modules
 // var $ = require('jquery');
 // require jQuery dans une variable local / normally
-import $ from 'jquery';
+import $ from "jquery";
 
 // charge le paquet bootstrap à partir de node_modules
-import 'bootstrap';
-
-// Plugin JavaScript
-import 'jquery.easing';
+import "bootstrap";
 
 // charge le js du template grayscale
-import './grayscale';
+import "./grayscale";
 
 // charge le paquet bootstrap4-toggle à partir de node_modules
-import 'bootstrap4-toggle';
+import "bootstrap5-toggle";
 
 // charge le paquet gijgo à partir de node_modules
-import 'gijgo';
+import "gijgo";
 
 // charge le js pour l'Ajax page stage
-import './ajax';
+import "./ajax";
 
 // charge le js pour les modals
-import './modals';
+import "./modals";
 
 // charge le plugin jQuery liScroll pour les news
-import './news';
+import "./news";
 
 // charge le js pour les images de la galerie
-import './gallery';
+import "./gallery";
 
 // charge le plugin datatable à partir de node_modules
-import 'datatables.net-dt';
+import "datatables.net-dt";
 
-$(document).ready(function() {
-    // tout le code d'ici est executé dans la page consultée
+$(document).ready(function () {
+  // tout le code d'ici est executé dans la page consultée
 
-    // pop-up de select heure
-    $('.timepicker').timepicker({ 
-        modal: true,
-        header: true,
-        footer: true,
-        mode: '24hr',
-        size: 'large',
-        uiLibrary: 'materialdesign'
-    });
+  // pop-up de select heure
+  $(".timepicker").timepicker({
+    modal: true,
+    header: true,
+    footer: true,
+    mode: "24hr",
+    size: "large",
+    uiLibrary: "materialdesign",
+  });
 
-    // news text defilant
-    $(function(){ $("ul#ticker01").liScroll({travelocity: 0.08}); });
+  // news text defilant
+  $(function () {
+    $("ul#ticker01").liScroll({ travelocity: 0.08 });
+  });
 
-    // alignement des items de la nav
-    $('#mainNav .collapse.navbar-collapse .nav-item .nav-link span').attr('style','vertical-align:-webkit-baseline-middle;');
-    
-    // scroll tbody sur la table des users
-    // options de la table d'après le plugin jQuery DataTable
-    $('#scrollTable').DataTable( {
-        paging:         false,
-        scrollY:        200,
-        "bInfo": false,
-        "language": {
-            "emptyTable": "Aucune donnée dans la table"
-          }
-    } );
-    // Bouton de recherche personnalisé avec id et fonctions DataTable
-    var dataTable = $('#scrollTable').DataTable();
-    $("#search_box").on('keyup', function() {
-    dataTable.search( this.value ).draw();
-    });
-    $("#search_box").focus(function() {
-        $(this).prev().removeClass('text-white');
-        $(this).prev().addClass('text-primary font-weight-bold');
-    }).focusout(function() {
-        $(this).prev().removeClass('text-primary font-weight-bold');
-        $(this).prev().addClass('text-white');
+  // scroll tbody sur la table des users
+  // options de la table d'après le plugin jQuery DataTable
+  $("#scrollTable").DataTable({
+    paging: false,
+    scrollY: 200,
+    bInfo: false,
+    language: {
+      emptyTable: "Aucune donnée dans la table",
+    },
+  });
+  // Bouton de recherche personnalisé avec id et fonctions DataTable
+  var dataTable = $("#scrollTable").DataTable();
+  $("#search_box").on("keyup", function () {
+    dataTable.search(this.value).draw();
+  });
+  $("#search_box")
+    .focus(function () {
+      $(this).prev().removeClass("text-white");
+      $(this).prev().addClass("text-primary font-weight-bold");
+    })
+    .focusout(function () {
+      $(this).prev().removeClass("text-primary font-weight-bold");
+      $(this).prev().addClass("text-white");
     });
 });

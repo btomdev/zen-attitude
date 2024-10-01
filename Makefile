@@ -36,7 +36,7 @@ migrate:
 	$(EXEC) $(CONTAINER) bin/console doctrine:migrations:migrate --no-interaction
 
 npm-build:
-	$(EXEC) $(CONTAINER) npm run build
+	$(EXEC) $(CONTAINER) npm run dev
 
 npm-install:
 	$(EXEC) $(CONTAINER) npm install

@@ -1,8 +1,8 @@
-// Importation de node_module/bootstrap/scss/bootstrap.scss
-@import "~bootstrap/scss/bootstrap";
+// Importation des styles du template grayscale
+@import "./grayscale/grayscale.scss";
 
 // Importation de node_modules/bootstrap4-toggle/css/bootstrap-toggle.min.css
-@import "~bootstrap4-toggle/css/bootstrap4-toggle.min.css";
+@import "~bootstrap5-toggle/css/bootstrap5-toggle.min.css";
 
 // Importation de node_modules/@fortawesome/fontawesome-free/css/all.css
 // /!\ les images des icons ne sont pas pris en compte avec scss
@@ -16,19 +16,16 @@
 // Importation des Google Fonts
 @import url("https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css");
 
-// Importation des styles du template grayscale
-@import "./grayscale/grayscale.scss";
-
 #navbarDropdown {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #flashMessage {
-    position: absolute;
-    top: 10%;
-    text-align: center;
-    left: 25%;
-    width: 50%
+  position: absolute;
+  top: 10%;
+  text-align: center;
+  left: 25%;
+  width: 50%;
 }

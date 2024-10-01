@@ -1,32 +1,47 @@
-@import 'variables.scss';
-@import 'mixins.scss';
-@import 'navbar.scss';
-@import 'masthead.scss';
-@import 'buttons.scss';
-@import 'about.scss';
-@import 'club.scss';
-@import 'signup.scss';
-@import 'contact.scss';
-@import 'carsharing.scss';
-@import 'stages.scss';
-@import 'login.scss';
-@import 'aikido.scss';
-@import 'stages_accueil.scss';
-@import 'footer.scss';
-@import 'gallery.scss';
-@import 'admin.scss';
-@import 'errors.scss';
-@import 'timepicker.scss';
-@import 'news.scss';
-@import 'teacher.scss';
-@import 'user.scss';
-@import 'aikido-accueil.scss';
-@import 'news_modal.scss';
-@import 'modals.scss';
-@import 'time-slot.scss';
+//
+// Styles
+//
+
+// Import variables
+@import "./variables.scss";
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap.scss";
+
+// Global CSS
+@import "./global.scss";
+
+// Components
+@import "./components/buttons.scss";
+@import "./components/navbar.scss";
+@import "./components/timepicker.scss";
+@import "./components/news.scss";
+@import "./components/news_modal.scss";
+
+// Sections
+@import "./sections/masthead.scss";
+@import "./sections/about.scss";
+@import "./sections/projects.scss";
+@import "./sections/signup.scss";
+@import "./sections/contact.scss";
+@import "./sections/footer.scss";
+@import "./sections/club.scss";
+@import "./sections/carsharing.scss";
+@import "./sections/stages.scss";
+@import "./sections/login.scss";
+@import "./sections/aikido.scss";
+@import "./sections/stages_accueil.scss";
+@import "./sections/gallery.scss";
+@import "./sections/admin.scss";
+@import "./sections/errors.scss";
+@import "./sections/teacher.scss";
+@import "./sections/user.scss";
+@import "./sections/aikido-accueil.scss";
+@import "./sections/modals.scss";
+@import "./sections/time-slot.scss";
 
 body {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   letter-spacing: 0.0625em;
 }
 
@@ -55,7 +70,9 @@ footer {
   padding: 5rem 0;
 }
 
-select, input, textarea {
+select,
+input,
+textarea {
   text-align: center;
   text-align-last: center;
 }
@@ -74,5 +91,3 @@ select, input, textarea {
   max-height: 400px;
   overflow-y: auto;
 }
-
-

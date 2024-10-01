@@ -11,7 +11,7 @@
         </a>
 
         {# Bouton hamburger uniquement pour menu responsive #}
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
         </button>
@@ -19,7 +19,7 @@
         {# Contient tous les onglet de la nav #}
         <div class="collapse navbar-collapse" id="navbarResponsive">
             {# uniquement les sections présentent dans la homepage sont prensent dans ce ul #}
-            <ul id="homepageNav" class="navbar-nav ml-auto d-flex align-items-center">
+            <ul id="homepageNav" class="navbar-nav ms-auto d-flex align-items-center">
                 <li class="nav-item">
                     <a 
                     class="nav-link js-scroll-trigger {{ current_path == 'club_index' ? 'active' : '' }}" 
@@ -67,14 +67,14 @@
             </ul>
 
             {# Les autres pages du site non present dans la home page sont dans ce ul #}
-            <ul class="navbar-nav ml-auto d-flex align-items-center">
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
                 {# Si connecté #}
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
                     <li class="nav-item js-scroll-trigger dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {# Déplacer le bienvenue ? Ou remplacer par photo user ? #}
-                            <span class="pr-2">Bienvenue {{ app.user.name }}</span>
+                            <span class="pe-2">Bienvenue {{ app.user.name }}</span>
                             <i class="fas fa-user-circle fa-2x"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -94,7 +94,7 @@
                         </div>
                     </li>
                     <!-- <li class="nav-item dropdown">
-                        <a class="nav-link text-white d-flex align-items-center dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><p class="m-0 mr-3">Bienvenue {{ app.user.name }}</p></a>
+                        <a class="nav-link text-white d-flex align-items-center dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><p class="m-0 me-3">Bienvenue {{ app.user.name }}</p></a>
                         <div class="dropdown-menu bg-dark">
                             <a class="nav-link js-scroll-trigger text-white drop" href="{{ path('user_dashboard') }}">Profil</a>
                             <a class="nav-link js-scroll-trigger text-white drop" href="{{ path('logout')}}">Déconnexion</a>

@@ -1,0 +1,40 @@
+//
+// About
+//
+
+.about-section {
+  padding-top: 10rem;
+  background: linear-gradient(
+    to bottom,
+    $black 0%,
+    #{fade-out($black, 0.1)} 75%,
+    #{fade-out($black, 0.2)} 100%
+  );
+
+  h1 {
+    background: -webkit-linear-gradient(
+      hsla(0, 0%, 100%, 0.9),
+      hsla(0, 0%, 100%, 0)
+    );
+    background-clip: border-box;
+    font-family: Varela Round;
+    font-size: 2.5rem;
+    letter-spacing: 0.8rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    padding-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  hr {
+    border-color: $primary;
+    border-width: 0.25rem;
+    width: 30%;
+    opacity: 1;
+  }
+}
