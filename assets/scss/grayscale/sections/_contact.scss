@@ -1,23 +1,43 @@
+//
+// Contact
+//
+
 .contact-section {
-    padding: 16rem 0;
-    background: linear-gradient(to bottom, #{fade-out($black, .9)} 0%,#{fade-out($black, .5)} 75%,$black 100%), url('../../../public/img/bg-signup.jpg') no-repeat;
-    .card {
+  padding: 16rem 0;
+  background: linear-gradient(
+      to bottom,
+      #{fade-out($black, 0.9)} 0%,
+      #{fade-out($black, 0.5)} 75%,
+      $black 100%
+    ),
+    url("../../../../public/img/bg-signup.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+
+  .card {
     border: 0;
     border-bottom: 0.25rem solid $primary;
+
     h4 {
       font-size: 0.8rem;
-      font-family: 'Varela Round';
+      font-family: $font-family-special;
       text-transform: uppercase;
       letter-spacing: 0.15rem;
     }
+
     hr {
+      opacity: 1;
       border-color: $primary;
       border-width: 0.25rem;
       width: 3rem;
     }
   }
+
   .social {
     margin-top: 5rem;
+
     a {
       text-align: center;
       height: 3rem;
@@ -26,9 +46,11 @@
       border-radius: 100%;
       line-height: 3rem;
       color: fade-out($white, 0.7);
+
       &:hover {
         color: fade-out($white, 0.5);
       }
+
       &:active {
         color: $white;
       }

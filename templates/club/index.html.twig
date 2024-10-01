@@ -18,14 +18,14 @@
 
           <!-- schedule One Row -->
           <h2 class="text-primary text-center">Horaires</h2>
-          <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div class="row justify-content-center g-0 mb-5 mb-lg-0">
             <div class="col-lg-6">
                 <img class="img-fluid" src="img/logo2.jpg" alt="logo aikido">
             </div>
             <div class="col-lg-6">
                 <div class="text-center h-100">
                 <div class="d-flex h-100">
-                    <div class="schedule-text w-100 my-auto text-center text-lg-left">
+                    <div class="schedule-text w-100 my-auto text-center text-lg-start">
                     <table class="table text-center text-white">
                         <thead class="thead-black border-top-0">
                             <tr>
@@ -52,15 +52,15 @@
           
           <!-- prices Two Row -->
           <h3 class="text-primary mt-5">Tarifs</h3>
-          <div class="row justify-content-center no-gutters mt-5">
+          <div class="row justify-content-center g-0 mt-5">
             <div class="col-lg-6">
               <img class="img-fluid" src="img/aiki4.png" alt="image aikido">
             </div>
             <div class="col-lg-6 order-lg-first">
               <div class=" text-center h-100">
                 <div class="d-flex h-100">
-                  <div class="club-text w-100 my-auto text-center text-lg-right">
-                    <h5 class="text-warning">Inscriptions à partir de 16 ans</h5>
+                  <div class="club-text w-100 my-auto text-center text-lg-end">
+                    <h5 class="text-warning text-end">Inscriptions à partir de 16 ans</h5>
                     {% for membership in memberships %}
                         
                         <p class="mb-0 text-white-50">{{ membership.age }} <span class="text-warning">{{ membership.price }} €</span> License Fédérale comprise</p>
@@ -71,7 +71,7 @@
                         <li><a href="img/questionnaire_sante_ffaaa_.pdf" target="blank">Questionnaire de santé FFAAA</a></li>
                         <li> <a href="img/assurance_note_information.pdf" target="blank">Note d'information assurance</a></li>
                     </ul>
-                    <hr class="d-none d-lg-block mb-0 mr-0">
+                    <hr class="d-none d-lg-block mb-0 me-0 ms-auto">
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@
             <div class="card president-card">
                 <img class="card-img-top" src="img/david2.jpg" alt="David Alves">
                 <div class="card-body">
-                    <h5 class="card-title">David Alves</h5>
+                    <h5 class="card-title text-white">David Alves</h5>
                     <p class="card-text text-primary">1er DAN</p>
                 </div>
             </div>

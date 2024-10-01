@@ -1,29 +1,28 @@
 {
-    "devDependencies": {
-        "@symfony/webpack-encore": "^4.6.1",
-        "sass": "^1.72.0",
-        "sass-loader": "^14.1.1",
-        "webpack-notifier": "^1.6.0"
-    },
-    "license": "UNLICENSED",
-    "private": true,
-    "scripts": {
-        "dev-server": "encore dev-server",
-        "dev": "encore dev",
-        "watch": "encore dev --watch",
-        "build": "encore production --progress"
-    },
-    "dependencies": {
-        "@babel/core": "^7.25.2",
-        "@fortawesome/fontawesome-free": "^5.6.3",
-        "bootstrap": "^4.2.1",
-        "bootstrap4-toggle": "^3.4.0",
-        "datatables.net-bs4": "^1.10.19",
-        "datatables.net-dt": "^1.10.19",
-        "gijgo": "^1.9.11",
-        "jquery": "^3.3.1",
-        "jquery.easing": "^1.4.1",
-        "mustache": "^3.0.1",
-        "popper.js": "^1.14.7"
-    }
+  "devDependencies": {
+    "@symfony/webpack-encore": "^4.6.1",
+    "sass": "^1.72.0",
+    "sass-loader": "^14.1.1",
+    "webpack-notifier": "^1.6.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "dependencies": {
+    "@babel/core": "^7.25.2",
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "bootstrap": "^5.0.2",
+    "bootstrap5-toggle": "^5.1.1",
+    "datatables.net-bs4": "^1.10.19",
+    "datatables.net-dt": "^1.10.19",
+    "gijgo": "^1.9.11",
+    "jquery": "^3.3.1",
+    "mustache": "^3.0.1",
+    "popper.js": "^1.14.7"
+  }
 }

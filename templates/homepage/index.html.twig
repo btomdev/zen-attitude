@@ -14,7 +14,7 @@
         <a href="#about" class="btn btn-primary js-scroll-trigger">Bienvenue</a>
         <div class="row mx-auto mt-5">
           {% include "homepage/_news.html.twig" %}
-          <a class="displayNews text-white-50 d-flex align-items-center" href=""><i class="fas fa-list-alt fa-2x"></i></a>
+          <a class="displayNews text-white-50 d-flex align-items-center w-auto" href=""><i class="fas fa-list-alt fa-2x"></i></a>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
           <h1>L'Aïkido Club de Bourg-en-Bresse</h1>
           <p class="text-white-50">est une association loi 1901, affiliée à la <a href="https://www.aikido.com.fr" target="blank">Fédération Française d'Aïkido, Aïkibudo et Affinitaire (F.F.A.A.A)</a>, membre de L'Union des Fédérations d'Aïkido (U.F.A) reconnue par le Ministère de la Jeunesse et des Sports.</p>
           <a href="{{ path('club_index') }}">Infos, horaires et tarifs</a>
-          <hr class="d-none d-lg-block mb-0 ml-0 mx-auto">
+          <hr class="d-none d-lg-block mb-0 mx-auto">
         </div>
       </div>
       <img src="img/logo_rounded2.png" alt="logo du club" class="img-fluid mx-auto mt-3 mb-5">
@@ -39,16 +39,15 @@
   <section id="projects" class="projects-section">
     <div class="container">
       <!-- Featured Aikido Row -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-        <div class="col-xl-8 col-lg-7">
+      <div class="row align-items-center g-0 mb-4 mb-lg-5">
+        <div class="col-xl-8 col-lg-7 text-center">
           <img class="img-fluid mb-3 mb-lg-0" src="img/immobilisation.png" alt="immobilisation au sol">
         </div>
         <div class="col-xl-4 col-lg-5">
-          <div class="featured-text text-center text-lg-left">
+          <div class="featured-text text-center text-lg-start">
             <h4>L'Aïkido, un Art martial sans compétition</h4>
             <p class="text-black-50 mb-1.5">Accessible à toutes et à tous, sans tenir compte de l'âge, de la morphologie, des origines sociales ou professionnelles.</p>
             <a href="{{ path('aikido_index') }}">En Savoir plus</a>
-            <hr class="d-none d-lg-block mb-0 ml-0">
           </div>
         </div>
       </div>
@@ -59,20 +58,19 @@
   <section id="stages" class="stages_accueil-section">
     <div class="container">
       <!-- stage One Row -->
-      <div class="row justify-content-center no-gutters  mb-lg-0">
+      <div class="row justify-content-center g-0  mb-lg-0">
         <div class="col-lg-6 order-lg-first">
           <img class="img-fluid" src="img/stage.jpg" alt="stage aikido">
         </div>
         <div class="col-lg-6">
           <div class="text-center h-100 project">
             <div class="d-flex h-100">
-              <div class="stage-text w-100 my-auto text-center text-lg-left">
+              <div class="stage-text w-100 my-auto text-center text-lg-start">
                 <h4 class="text-white">Stages</h4>
                 <p class="mb-1.5 text-white-50">L' Aïkido Club de Bourg-en-Bresse organise plusieurs stages internes chaque année. <br>
                 Vous trouverez également dans cette section, la liste des stages référencés sur aikidostage.com . <br>
                 </p>
                 <a href="{{ path('stage_index') }}" class="mt-3">Trouver un stage</a>
-                <hr class="d-none d-lg-block mb-0 ml-0">
               </div>
             </div>
           </div>
@@ -85,19 +83,18 @@
   <section id="gallery" class="projects-section">
     <div class="container">
       <!-- Featured gallery Row -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+      <div class="row align-items-center g-0 mb-4 mb-lg-5">
         <div class="col-xl-8 col-lg-7">
           <img class="img-fluid mb-3 mb-lg-0" src="img/kaiten_nage.png" alt="kaiten nage">
         </div>
         <div class="col-xl-4 col-lg-5">
-          <div class="featured-text text-center text-lg-left">
+          <div class="featured-text text-center text-lg-start">
             <h4>Galerie photos</h4>
             <p class="text-black-50 mb-1.5">Retrouvez ici les photos du club et des différents stages</p>
             <p class="text-danger mb-1.5">L'accès à la galerie est réservé aux membres du club</p>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
               <a href="{{ path('gallery_index') }}">Voir la galerie</a>
             {% endif %}
-            <hr class="d-none d-lg-block mb-0 ml-0">
           </div>
         </div>
       </div>
@@ -108,21 +105,20 @@
     <section id="carsharing" class="stages_accueil-section">
       <div class="container">
         <!-- stage One Row -->
-        <div class="row justify-content-center no-gutters  mb-lg-0">
+        <div class="row justify-content-center g-0 text-center mb-lg-0">
           <div class="col-lg-6 order-lg-first">
             <img class="img-fluid" src="img/covoiturage.png" alt="logo covoiturage">
           </div>
           <div class="col-lg-6">
             <div class="text-center h-100 project">
               <div class="d-flex h-100">
-                <div class="stage-text w-100 my-auto text-center text-lg-left">
+                <div class="stage-text w-100 my-auto text-center text-lg-start">
                   <h4 class="text-white">Covoiturage</h4>
                   <p class="mb-1.5 text-white-50">Vous voulez vous rendre à un stage, consultez la liste des covoiturages disponibles ou bien créez en  un!</p>
                   <p class="mb-1.5 text-danger">Cette fonctionalité est réservé aux membre du club</p>
                   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                   <a href="{{ path('carsharing_index') }}" class="mt-3">Trouver un covoiturage</a>
                   {% endif %}
-                  <hr class="d-none d-lg-block mb-0 ml-0">
                 </div>
               </div>
             </div>
@@ -141,7 +137,7 @@
           <h2 class="text-white mb-5">Inscrivez-vous, pour recevoir nos futurs stages</h2>
 
           <form class="form-inline d-flex">
-            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Entrer votre adresse email">
+            <input type="email" class="form-control flex-fill me-0 me-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Entrer votre adresse email">
             <button type="submit" class="btn btn-primary mx-auto">Inscription</button>
           </form>
 
@@ -161,7 +157,7 @@
             <div class="card-body text-center">
               <i class="fas fa-map-marked-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Dojo</h4>
-              <hr class="my-4">
+              <hr class="my-4 mx-auto">
               <div class="text-black">COSEC Favier</div>
               <div class="text-black-50">- 1 rue Docteur Duby --</div>
               <div class="text-black-50">01000 Bourg-en-Bresse</div>
@@ -174,7 +170,7 @@
             <div class="card-body text-center">
               <i class="fas fa-envelope text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Email</h4>
-              <hr class="my-4">
+              <hr class="my-4 mx-auto">
               <div class="text-black-50">
                 <a href="mailto:aikidobourg@hotmail.fr">aikidobourg@hotmail.fr</a>
               </div>
@@ -187,7 +183,7 @@
             <div class="card-body text-center">
               <i class="fas fa-mobile-alt text-primary mb-2"></i>
               <h4 class="text-uppercase m-0">Renseignements par téléphone</h4>
-              <hr class="my-4">
+              <hr class="my-4 mx-auto">
               <div class="text-black">David Alves - Président -</div>
               <div class="text-black-50">06-50-35-06-90</div>
             </div>

@@ -42,10 +42,10 @@
                 {% if app.user.id == user.id %}                     
                     <div class="row mb-4">
                         <div class="col-lg-6">
-                            <a href="{{ path('user_edit') }}" class="btn btn-block btn-primary">Modifier mon profil</a>
+                            <a href="{{ path('user_edit') }}" class="btn  btn-primary">Modifier mon profil</a>
                         </div>
                         <div class="col-lg-6">
-                            <a href="{{ path('user_edit_password') }}" class="btn btn-block btn-primary">Modifier mon mot de passe</a>
+                            <a href="{{ path('user_edit_password') }}" class="btn  btn-primary">Modifier mon mot de passe</a>
                         </div>                      
                     </div>
                 {% endif %}
@@ -68,7 +68,7 @@
                         <span class="text-primary">Technique(s) à travailler : </span>
                             <div class="row d-flex flex-row justify-content-center mt-2 mb-n3">
                                 {% for technic in user.technics %}
-                                    <div class="col-sm-2 badge badge-primary m-2 p-2">{{ technic.attack }}<br>{{ technic.title }}<br>{{ technic.side }}</div>
+                                    <div class="col-sm-2 badge bg-primary m-2 p-2">{{ technic.attack }}<br>{{ technic.title }}<br>{{ technic.side }}</div>
                                 {% endfor %}
                             </div>
                         </p>
